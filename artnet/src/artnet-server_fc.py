@@ -1,5 +1,5 @@
 # Art-Net protocol for Fadecandy
-#Adapted from artnet Unicorn hat implementation
+#Adapted from https://github.com/chunk100/Glediator-with-Fadecandy
 
 #Fadecandy stuff
 import opc, time
