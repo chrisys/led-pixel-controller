@@ -1,0 +1,36 @@
+version: '2'
+networks:
+  static:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/29
+        
+services:
+  fcserver:
+    restart: always
+    build: ./fcserver
+    privileged: true
+    ports:
+      - "80:7890"
+    networks:
+      static:
+        ipv4_address: 172.20.0.2
+  artnet:
+    restart: always
+    build: ./artnet
+    depends_on:
+      - fcserver
+    networks:
+      static:
+        ipv4_address: 172.20.0.3
+  glediator:
+    restart: always
+    build: ./glediator
+    ports:
+      - "5900:5900"
+    depends_on:
+      - fcserver
+      - artnet
+    networks:
+      static:
+        ipv4_address: 172.20.0.4

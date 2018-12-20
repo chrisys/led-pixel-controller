@@ -1,0 +1,9 @@
+FROM resin/raspberrypi3-debian
+
+WORKDIR /usr/src/app
+
+COPY server.json .
+RUN curl -OL https://github.com/scanlime/fadecandy/raw/master/bin/fcserver-rpi
+RUN chmod +x fcserver-rpi
+
+CMD ["./fcserver-rpi","server.json"]
