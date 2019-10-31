@@ -4,7 +4,7 @@ networks:
     ipam:
       config:
         - subnet: 172.20.0.0/29
-          gateway: 127.20.0.1
+          gateway: 172.20.0.1
 
 services:
   fcserver:
