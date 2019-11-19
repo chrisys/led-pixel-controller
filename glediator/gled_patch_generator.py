@@ -6,7 +6,7 @@ pixel_count = 250
 channel_count = pixel_count * 3
 pixels_per_universe = 170
 universe_count = 2
-artnet_host = '172.18.0.3'
+artnet_host = '172.20.0.3'
 
 print('#GLEDIATOR Patch File')
 print('Patch_Matrix_Size_X=%d' % x_size)

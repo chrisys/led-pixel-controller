@@ -12,7 +12,7 @@ services:
     build: ./fcserver
     privileged: true
     ports:
-      - "80:7890"
+      - "7890:7890"
     networks:
       static:
         ipv4_address: 172.20.0.2
@@ -35,3 +35,13 @@ services:
     networks:
       static:
         ipv4_address: 172.20.0.4
+  vnc:
+    restart: always
+    build: vnc
+    ports:
+      - "80"
+    depends_on:
+      - glediator
+    networks:
+      static:
+        ipv4_address: 172.20.0.5

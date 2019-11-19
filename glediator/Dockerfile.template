@@ -1,4 +1,4 @@
-FROM resin/raspberrypi3-debian:stretch
+FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:buster
 
 RUN apt-get update && apt-get install -yq \
     x11vnc x11-utils xvfb wmctrl default-jre \

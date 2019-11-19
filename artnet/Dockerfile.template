@@ -1,4 +1,4 @@
-FROM resin/raspberrypi3-python:2
+FROM balenalib/%%BALENA_MACHINE_NAME%%-python:2
 
 RUN apt-get update && apt-get install -yq \
     python-twisted && \
