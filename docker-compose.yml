@@ -2,6 +2,7 @@ version: '2'
 networks:
   static:
     ipam:
+      driver: default
       config:
         - subnet: 172.20.0.0/29
           gateway: 172.20.0.1
