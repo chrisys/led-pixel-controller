@@ -7,7 +7,12 @@ RUN apt-get update && apt-get install -yq \
 
 WORKDIR /usr/src/app
 
-COPY . .
+COPY presets /root
+COPY lib ./lib
+COPY gled_patch_generator.py .
+COPY Glediator_V2.jar .
+COPY autoSave.gled .
+
 ADD supervisor /etc/supervisor
 
 RUN python gled_patch_generator.py > patch.gled
