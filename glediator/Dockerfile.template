@@ -17,4 +17,4 @@ ADD supervisor /etc/supervisor
 
 RUN python gled_patch_generator.py > patch.gled
 
-ENTRYPOINT supervisord -c /etc/supervisor/supervisord.conf
+CMD ["supervisord","-c","/etc/supervisor/supervisord.conf"]
