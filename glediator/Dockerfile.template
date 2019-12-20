@@ -11,10 +11,12 @@ COPY presets /root
 COPY lib ./lib
 COPY gled_patch_generator.py .
 COPY Glediator_V2.jar .
-COPY autoSave.gled .
+COPY start.sh .
 
 ADD supervisor /etc/supervisor
 
+RUN chmod +x start.sh
+
 RUN python gled_patch_generator.py > patch.gled
 
-CMD ["supervisord","-c","/etc/supervisor/supervisord.conf"]
+CMD ["./start.sh"]
