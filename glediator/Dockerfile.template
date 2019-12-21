@@ -1,9 +1,17 @@
 FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:buster
 
-RUN apt-get update && apt-get install -yq \
-    x11vnc x11-utils xvfb wmctrl default-jre \
-    supervisor python && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN install_packages \
+    x11vnc \
+    x11-utils \
+    xvfb \
+    wmctrl \
+    default-jre \
+    supervisor \
+    python \
+    python-pip \
+    xdotool
+
+RUN pip install supervisord-dependent-startup
 
 WORKDIR /usr/src/app
 
@@ -12,10 +20,12 @@ COPY lib ./lib
 COPY gled_patch_generator.py .
 COPY Glediator_V2.jar .
 COPY start.sh .
+COPY outputcontrol.sh .
 
 ADD supervisor /etc/supervisor
 
 RUN chmod +x start.sh
+RUN chmod +x outputcontrol.sh
 
 RUN python gled_patch_generator.py > patch.gled
 
