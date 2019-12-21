@@ -1,4 +1,6 @@
 #!/bin/bash
+export DISPLAY=:1
+
 while [[ -z $windowid ]]
 do
     windowid=$(xdotool search --name "GLEDIATOR - Graphical LED Installation AnimaTOR")

@@ -9,7 +9,8 @@ RUN install_packages \
     supervisor \
     python \
     python-pip \
-    xdotool
+    xdotool \
+    cron
 
 RUN pip install supervisord-dependent-startup
 
@@ -17,16 +18,15 @@ WORKDIR /usr/src/app
 
 COPY presets /root
 COPY lib ./lib
-COPY gled_patch_generator.py .
+COPY scripts ./scripts
 COPY Glediator_V2.jar .
 COPY start.sh .
-COPY outputcontrol.sh .
 
 ADD supervisor /etc/supervisor
 
 RUN chmod +x start.sh
-RUN chmod +x outputcontrol.sh
+RUN chmod +x scripts/*.sh
 
-RUN python gled_patch_generator.py > patch.gled
+RUN python scripts/gled_patch_generator.py > patch.gled
 
 CMD ["./start.sh"]
