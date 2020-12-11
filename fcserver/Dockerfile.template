@@ -1,4 +1,4 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%
+FROM balenalib/raspberry-pi
 
 WORKDIR /usr/src/app
 
