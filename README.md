@@ -28,7 +28,7 @@ This project has been built to be deployed to balenaCloud in order to enable rem
 
 Get started deploying all the software you need by clicking the button below.
 
-[![](https://balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/balena-io-playground/internetspeedtest)
+[![](https://balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/balenalabs-incubator/led-pixel-controller)
 
 The deployment process will ask you to sign up or sign in to balenaCloud, and then add a device to the application. This will automatically set up your device with all the software required.
 
