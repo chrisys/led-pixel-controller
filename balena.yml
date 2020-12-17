@@ -1,0 +1,21 @@
+version: "2"
+slug: "fadecandy-led-controller"
+name: "LED Pixel Controller"
+type: "sw.application"
+assets:
+  - url: "https://github.com/balenalabs-incubator/fadecandy-led-controller"
+    name: "repository"
+  - url: "https://raw.githubusercontent.com/balenalabs-incubator/fadecandy-led-controller/master/logo.png"
+    name: "logo"
+data:
+  description: "Remotely control and program configurable RGB LED pixel matrices, strings, trees, and more with this handy all-in-one setup."
+  applicationEnvironmentVariables:
+    - ENABLE_TIMER: 0
+    - TIMER_ON: '0 9 * * *'
+    - TIMER_OFF: '0 2 * * *'
+    - TZ: 'Europe/London'
+  defaultDeviceType: "raspberrypi3"
+  supportedDeviceTypes:
+    - "raspberrypi3"
+    - "raspberrypi4-64"
+    - "fincm3"
