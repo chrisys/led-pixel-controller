@@ -1,14 +1,16 @@
-version: "2"
-slug: "led-pixel-controller"
 name: "LED Pixel Controller"
+description: "Remotely control and program configurable RGB LED pixel matrices, strings, trees, and more with this handy all-in-one setup."
 type: "sw.application"
 assets:
-  - url: "https://github.com/balenalabs-incubator/led-pixel-controller"
-    name: "repository"
-  - url: "https://raw.githubusercontent.com/balenalabs-incubator/led-pixel-controller/master/logo.png"
-    name: "logo"
+  repository:
+    type: "blob.asset"
+    data:
+      url: "https://github.com/balenalabs-incubator/led-pixel-controller"
+  logo:
+    type: "blob.asset"
+    data:
+      url: "https://raw.githubusercontent.com/balenalabs-incubator/led-pixel-controller/master/logo.png"
 data:
-  description: "Remotely control and program configurable RGB LED pixel matrices, strings, trees, and more with this handy all-in-one setup."
   applicationEnvironmentVariables:
     - ENABLE_TIMER: 0
     - TIMER_ON: '0 9 * * *'
