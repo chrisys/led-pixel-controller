@@ -43,6 +43,8 @@ services:
       - "80"
     depends_on:
       - glediator
+    labels:
+      io.balena.features.supervisor-api: 1
     networks:
       static:
         ipv4_address: 172.20.0.5

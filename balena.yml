@@ -1,15 +1,21 @@
 name: "LED Pixel Controller"
 description: "Remotely control and program configurable RGB LED pixel matrices, strings, trees, and more with this handy all-in-one setup."
 type: "sw.application"
+post-provisioning: >-
+  ## Usage instructions
+  
+  Once your device joins the fleet you'll need to allow some time for it to download the application. When it's completed you should be able to access Glediator via the VNC web interface by entering http://led-pixel-controller or http://led-pixel-controller.local in a web browser.
+
+  For deploying to your own fleet use the 'fork this fleet' button above and set a device up within balenaCloud.
 assets:
   repository:
     type: "blob.asset"
     data:
-      url: "https://github.com/balenalabs-incubator/led-pixel-controller"
+      url: "https://github.com/chrisys/led-pixel-controller"
   logo:
     type: "blob.asset"
     data:
-      url: "https://raw.githubusercontent.com/balenalabs-incubator/led-pixel-controller/master/logo.png"
+      url: "https://raw.githubusercontent.com/chrisys/led-pixel-controller/master/logo.png"
 data:
   applicationEnvironmentVariables:
     - ENABLE_TIMER: 0
@@ -22,3 +28,4 @@ data:
     - "raspberrypi4-64"
     - "fincm3"
     - "jetson-nano"
+version: 0.1.3
